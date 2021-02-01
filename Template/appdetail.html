@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <form  method="post">
+   {% csrf_token %}
+     <div class="container" align="center">
+       <table border="2px">
+         <tbody>
+           <thead>
+             <th><h1>DOCTOR NAME</h1></th>
+             <th><h1>PATIENT NAME</h1></th>
+             <th><h1>DATE AND TIME</h1></th>
+             <th><h1>DISEASE</h1></th>
+
+           </thead>
+
+
+           <tr>
+             <td><h2>{{app_list.doctor}}</h2></td>
+             <td><h2>{{app_list.patient}}</h2></td>
+             <td><h2>{{app_list.date_and_time}}</h2></td>
+             <td><h2>{{app_list.disease}}</h2></td>
+             </tr>
+
+
+         </tbody>
+        </table>
+     </div>
+  </form>
+  </body>
+
+</html>

@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "style.css"%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <form class="card">
+            <div class="card-body row no-gutters">
+              <div class="row">
+                <div class="col">
+                  <input type="search" name="pname" value="" >
+                </div>
+                <div class="col-auto">
+                  <button type="search" name="button" class="btn btn-success">Search</button>
+                </div>
+              </div>
+
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+      <h1>View Patient Details</h1>
+      <table border="2px">
+        <tbody>
+          <thead>
+            <th><h1>PATIENT NAME</h1></th>
+            <th><h1>MOBILE NUMBER</h1></th>
+            <th><h1>AGE</h1></th>
+            <th><h1>GENDER</h1></th>
+            <th><h1>ADDRESS</h1></th>
+          </thead>
+          {% for i in page_obj %}
+
+            <tr>
+            <td><h2>{{i.patient_name}}</h2></td>
+            <td><h2>{{i.mobile_number}}</h2></td>
+            <td><h2>{{i.age}}</h2></td>
+            <td><h2>{{i.gender}}</h2></td>
+            <td><h2>{{i.address}}</h2></td>
+            </tr>
+
+          {% endfor %}
+        </tbody>
+
+      </table>
+
+      <div class="row" id="patientpage">
+        {% if page_obj.has_previous %}
+          <a href="?page={{page_obj.previous_page_number}}">Previous</a>
+        {% endif %}
+
+        {{page_obj.number}}
+
+
+        {% if page_obj.has_next %}
+          <a href="?page={{page_obj.next_page_number}}">Next</a>
+        {% endif %}
+
+      </div>
+</body>
+</html>

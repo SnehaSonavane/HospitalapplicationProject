@@ -1,0 +1,21 @@
+
+#patientpage{
+  float: right;
+  padding-right: 230px;
+}
+
+#searchbar{
+  float: left;
+}
+
+body{
+/*  background-image: url("Hospital.jpg");*/
+  background-color: orange;
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
